@@ -1,18 +1,25 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+'use client';
 
-export const metadata = { title: "Barrierefreiheit – Praxisportal" };
-
-export default function Page() {
+export default function BarrierefreiheitPage() {
   return (
-    <div className="min-h-dvh flex flex-col">
-      <Navbar />
-      <main id="main" className="flex-1 mx-auto max-w-4xl px-4 py-10">
-        <h1 className="text-3xl font-bold">Barrierefreiheit</h1>
-        <p className="mt-3">Erklärung zur digitalen Barrierefreiheit (Demo‑Text).</p>
-      </main>
-      <Footer />
-    </div>
+    <main className="min-h-screen bg-white text-black">
+      <div className="mx-auto max-w-3xl px-4 py-12">
+        <h1 className="text-3xl font-bold">Erklärung zur Barrierefreiheit</h1>
+        <p className="mt-6 text-gray-700">
+          Diese Demo‑Website orientiert sich an den Anforderungen der Barrierefreiheits‑Stärkungsgesetze
+          (insb. WCAG 2.1 AA). Sie dient als Beispiel, wie ein Praxis‑Portal zugänglich gestaltet werden kann.
+        </p>
+        <ul className="mt-4 list-disc pl-6 text-gray-700 space-y-2">
+          <li>Klare Kontraste, große Klickflächen, skalierbare Schrift</li>
+          <li>Tastaturbedienbarkeit, sichtbarer Fokus</li>
+          <li>Sinnvolle Struktur (Überschriften, Landmarken, ARIA dort wo nötig)</li>
+          <li>Verständliche Sprache und eindeutige Labels</li>
+        </ul>
+        <p className="mt-6 text-sm text-gray-600">
+          Hinweis: Platzhaltererklärung für den Showcase. In der echten Praxis‑Website wird eine
+          vollständige A11y‑Erklärung inkl. Feedback‑Mechanismus bereitgestellt.
+        </p>
+      </div>
+    </main>
   );
 }
-
