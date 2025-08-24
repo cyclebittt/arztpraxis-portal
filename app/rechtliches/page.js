@@ -1,22 +1,31 @@
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import Link from "next/link";
+'use client';
 
-export const metadata = { title: "Rechtliches – Praxisportal" };
+import Link from 'next/link';
 
-export default function Page() {
+export default function LegalIndexPage() {
   return (
-    <div className="min-h-dvh flex flex-col">
-      <Navbar />
-      <main id="main" className="flex-1 mx-auto max-w-4xl px-4 py-10">
+    <main className="min-h-screen bg-white text-black">
+      <div className="mx-auto max-w-3xl px-4 py-12">
         <h1 className="text-3xl font-bold">Rechtliches</h1>
-        <ul className="mt-6 list-disc pl-6 space-y-2">
-          <li><Link className="underline" href="/rechtliches/impressum">Impressum</Link></li>
-          <li><Link className="underline" href="/rechtliches/datenschutz">Datenschutz</Link></li>
-          <li><Link className="underline" href="/rechtliches/barrierefreiheit">Barrierefreiheit</Link></li>
-        </ul>
-      </main>
-      <Footer />
-    </div>
+        <p className="mt-3 text-gray-700">
+          Hier finden Sie die gesetzlichen Pflichtinformationen Ihrer Praxis‑Website.
+        </p>
+
+        <nav className="mt-8 space-y-3">
+          <Link href="/rechtliches/impressum" className="block rounded-md border p-4 hover:bg-gray-50">
+            <span className="font-semibold">Impressum</span>
+            <span className="block text-sm text-gray-600">Anbieterkennzeichnung nach § 5 TMG</span>
+          </Link>
+          <Link href="/rechtliches/datenschutz" className="block rounded-md border p-4 hover:bg-gray-50">
+            <span className="font-semibold">Datenschutzerklärung</span>
+            <span className="block text-sm text-gray-600">Informationen gemäß DSGVO</span>
+          </Link>
+          <Link href="/rechtliches/barrierefreiheit" className="block rounded-md border p-4 hover:bg-gray-50">
+            <span className="font-semibold">Erklärung zur Barrierefreiheit</span>
+            <span className="block text-sm text-gray-600">Konformität & Feedback‑Möglichkeiten</span>
+          </Link>
+        </nav>
+      </div>
+    </main>
   );
 }
